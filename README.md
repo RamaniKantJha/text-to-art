@@ -26,3 +26,8 @@ You can change it by editing the values of
        
 
    ![image](https://github.com/user-attachments/assets/0b036c1b-9809-425a-85bc-6baa631f1370)
+
+
+   # Output
+   ![image](https://github.com/user-attachments/assets/2cfff13f-a2e9-4cb5-b253-2c50ab8ee798)
+
