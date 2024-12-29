@@ -21,4 +21,4 @@ You can change it by editing the values of
        --itterations in the argument section of the code file, Defalut is set to 50
        --save every in the argument section of the code file, Default is set to 10
 
-       ![image](https://github.com/user-attachments/assets/37bbf474-180b-45dc-8553-63c7c7d4e8ce)
+   ![image](https://github.com/user-attachments/assets/0b036c1b-9809-425a-85bc-6baa631f1370)
