@@ -1,1 +1,1 @@
-#Generating Art with AI for low-end devices
+# Generating Art with AI for low-end devices
