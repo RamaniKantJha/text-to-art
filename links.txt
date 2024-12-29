@@ -1,0 +1,50 @@
+#Install Anaconda, open the root terminal, and create a new environment (and activate it):
+	conda create --name ai-art python=3.9
+	conda activate ai-art
+
+#Install Pytorch:
+	conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+#Install other required Python packages:
+	conda install -c anaconda git urllib3
+	pip install transformers keyboard pillow ftfy regex tqdm omegaconf pytorch-lightning IPython kornia imageio imageio-ffmpeg einops torch_optimizer
+
+#Clone this repository and switch to its directory:
+	git clone https://github.com/RamaniKantJha/text-to-art
+	cd text-to-art
+
+#Clone additional required repositories:
+	git clone https://github.com/openai/CLIP
+	git clone https://github.com/CompVis/taming-transformers
+
+#Download the default VQGAN pre-trained model checkpoint files:
+	mkdir checkpoints
+	curl -L -o checkpoints/vqgan_imagenet_f16_16384.yaml -C - "https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&dl=1"
+	curl -L -o checkpoints/vqgan_imagenet_f16_16384.ckpt -C - "https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&dl=1"
+
+*****************************************************************************************************************************************************************************************************
+
+#Install packages for CLIP-guided diffusion (if you're only interested in VQGAN+CLIP, you can skip everything from here to the end):
+	pip install ipywidgets omegaconf torch-fidelity einops wandb opencv-python matplotlib lpips datetime timm
+	conda install pandas
+
+#Clone repositories for CLIP-guided diffusion:
+	git clone https://github.com/crowsonkb/guided-diffusion
+	git clone https://github.com/assafshocher/ResizeRight
+	git clone https://github.com/CompVis/latent-diffusion
+
+#Download models needed for CLIP-guided diffusion:
+	mkdir content\models
+	curl -L -o content/models/256x256_diffusion_uncond.pt -C - "https://openaipublic.blob.core.windows.net/diffusion/jul-2021/256x256_diffusion_uncond.pt"
+	curl -L -o content/models/512x512_diffusion_uncond_finetune_008100.pt -C - "http://batbot.tv/ai/models/guided-diffusion/512x512_diffusion_uncond_finetune_008100.pt"
+	curl -L -o content/models/secondary_model_imagenet_2.pth -C - "https://ipfs.pollinations.ai/ipfs/bafybeibaawhhk7fhyhvmm7x24zwwkeuocuizbqbcg5nqx64jq42j75rdiy/secondary_model_imagenet_2.pth"
+	mkdir content\models\superres
+	curl -L -o content/models/superres/project.yaml -C - "https://heibox.uni-heidelberg.de/f/31a76b13ea27482981b4/?dl=1"
+	curl -L -o content/models/superres/last.ckpt -C - "https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1"
+
+*****************************************************************************************************************************************************************************************************
+
+#Final run for programme execution
+	python make_art.py example-prompts.txt
+cd C:\Users\HP\text-to-art
+python vqgan.py
