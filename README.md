@@ -14,11 +14,13 @@ A GUI will open
    ![image](https://github.com/user-attachments/assets/20ad8f6d-1b1a-4355-a80c-71e49fb07699)
 
 
-The OUTPUT.png File will get created in the text-to-art folder
+The OUTPUT.png File will get created in the text-to-art folder.
+
 The output.png file will get updated every 10 itterations for 50 itterations by default.
 
 You can change it by editing the values of 
-       --itterations in the argument section of the code file, Defalut is set to 50
-       --save every in the argument section of the code file, Default is set to 10
+       --itterations in the argument section of the code file, Defalut is set to 50.
+       --save every in the argument section of the code file, Default is set to 10.
+       
 
    ![image](https://github.com/user-attachments/assets/0b036c1b-9809-425a-85bc-6baa631f1370)
